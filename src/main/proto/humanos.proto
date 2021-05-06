@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ssaver.gob.mx.humanos.catalogos";
+option java_outer_classname = "HumanosCatalogos";
+
+package humanos;
+
+service UsuarioMethod{
+  rpc getUsuariosGRPC(EmptyGRPC) returns (listUsuariosGRPC){}
+  rpc getUsuarioByIdGRPC(idUsuarioGRPC) returns (UsuarioGRPC){}
+  rpc getUsuarioByUsuario(usuario) returns (UsuarioGRPC){}
+  rpc prueba(EmptyGRPC) returns (EmptyGRPC){}
+}
+
+message listUsuariosGRPC{
+    repeated UsuarioGRPC usuarios = 1;
+}
+
+message UsuarioGRPC{
+  int32 idUsuario = 1;
+  string nombre = 2;
+  string apellidoPaterno = 3;
+  string apellidoMaterno = 4;
+  string nombreUsuario = 5;
+}
+
+message usuario{
+  string nombreUsuario = 1;
+}
+
+message idUsuarioGRPC{
+
+  int32 id = 1;
+}
+
+message EmptyGRPC{}

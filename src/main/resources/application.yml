@@ -1,0 +1,14 @@
+quarkus:
+  datasource:
+    db-kind: 
+    reactive:
+      url: 
+    username: 
+    password: 
+
+  grpc:
+    server:
+      port: 7002
+
+  http:
+    port: 8080
